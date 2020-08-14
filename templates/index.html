@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block style %}
+<style>
+    body {
+        background-image: url("/static/bookbackground.jpg");
+    }
+    h1 {
+        color: black;
+    }
+    #welcome {
+        text-align: center;
+        margin-top: 10%;
+        background-color: rgba(255, 255, 255, 0.6);
+        padding-top: 1.5%;
+    }
+    .info {
+        width: 80%;
+        text-align: center;
+        padding: 1.5%;
+        margin-left: 10%;
+    }
+    p {
+        color: black;
+        padding: 1%;
+        width: 80%;
+        margin-left: 10%;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(224, 202, 168);">
+    <a class="navbar-brand" href="">Books</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/search">Search</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+<div id="welcome">
+    <h1>Welcome to Books</h1>
+    <p>Books is a website that allows you to go through a variety of books and find reviews and ratings on them. 
+        You can also place reviews on books through this website.</p>
+</div>
+{% endblock %}

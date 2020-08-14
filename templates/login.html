@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block style %}
+<style>
+    .logform {
+        text-align: center;
+        margin-top: 10%;
+        margin-left: 37.5%;
+        width: 25%;
+        padding: 2%;
+        display: inline-block;
+        border: 3px solid black;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 25px;
+        color: black;
+    }
+    body {
+        background-image: url("/static/bookbackground.jpg");
+    }
+    .labelform {
+        text-align: left;
+        color: black;
+    }
+    input {
+        width: 100%;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(224, 202, 168);">
+    <a class="navbar-brand" href="/">Books</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/search">Search</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/login">Login<span class="sr-only">(current)</span></a>
+        </li>
+        {% if 'logged_in' in session %}
+        <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+</nav>
+<div class="logform">
+    <h2>Login</h2>
+    <form action="{{ url_for('login') }}" method="POST">
+        <h5 class=labelform>Username</h5>
+        <input type="text" placeholder="Username" name="username">
+        </br>
+        <h5 class="labelform">Password</h5>
+        <input type="password" placeholder="Password" name="password">
+        <div class="form-group"></div>
+        <button class="btn btn-primary">Login</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
